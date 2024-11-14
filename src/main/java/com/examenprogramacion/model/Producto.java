@@ -46,5 +46,4 @@ public class Producto {
     private ZonedDateTime updatedAt;
 
 
-
 }

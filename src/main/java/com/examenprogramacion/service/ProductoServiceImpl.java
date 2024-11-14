@@ -3,6 +3,7 @@ package com.examenprogramacion.service;
 import com.examenprogramacion.model.Producto;
 import com.examenprogramacion.repository.ProductoRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
@@ -13,10 +14,10 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 
+
 public class ProductoServiceImpl implements ProductoService {
 
     private final ProductoRepository repository;
-
 
     @Override
     public Optional<Producto> crearProducto(Producto producto) {
@@ -37,6 +38,7 @@ public class ProductoServiceImpl implements ProductoService {
     public Producto obtenerProducto(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + id));
+
     }
 
     @Override
@@ -44,10 +46,12 @@ public class ProductoServiceImpl implements ProductoService {
         return repository.findAll();
     }
 
+
     @Override
     public Optional<Producto> obtenerPorId(Long id) {
         return repository.findById(id);
     }
+
 
     @Override
     public Producto actualizarProducto(Long id, Producto detallesProducto) {
@@ -63,13 +67,15 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public void eliminarProducto(Long id) {
+    public ResponseEntity<Object> eliminarProducto(Long id) {
         repository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
     @Override
     public Producto actualizarParcialProducto(Long id, Map<String, Object> updates) {
         return null;
+
     }
 
 

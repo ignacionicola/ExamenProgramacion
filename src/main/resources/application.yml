@@ -43,7 +43,6 @@ main:
 
 
 
-
 doc:
   swagger-ui:
     path: /swagger-ui/index.html

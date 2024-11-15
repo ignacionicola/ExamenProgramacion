@@ -3,13 +3,7 @@ package com.examenprogramacion.controller;
 import com.examenprogramacion.exception.EntityNotFoundException;
 import com.examenprogramacion.model.Producto;
 import com.examenprogramacion.service.ProductoService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,21 +13,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.examenprogramacion.exception.EntityNotFoundException;
-
-@Tag (name = "Producto", description = "Operaciones relacionadas con la gestión de Productos")
-
+@Tag(name = "Producto", description = "Operaciones relacionadas con la gestión de Productos")
 
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/productos")
 public class ProductoController {
-
-
-
-
-
 
 
     private final ProductoService service;
